@@ -1,0 +1,70 @@
+<ion-content>
+  <div class="home-container">
+    <ion-card class="user-card">
+    <ion-card-header class="user-card__header">
+      <ion-avatar>
+        <img src="../../assets/images/image-jeremy.png" alt="">
+      </ion-avatar>
+      <div>
+        <ion-text class="report">Report for</ion-text>
+        <ion-text class="username">Jeremy Robson</ion-text>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item button (click)="changeTab('daily')" [ngClass]="{'active':time==='daily'}">
+          <ion-label>
+            Daily
+          </ion-label>
+        </ion-item>
+        <ion-item button (click)="changeTab('weekly')" [ngClass]="{'active':time==='weekly'}">
+          <ion-label>
+            Weekly
+          </ion-label>
+        </ion-item>
+        <ion-item button (click)="changeTab('monthly')" [ngClass]="{'active':time==='monthly'}">
+          <ion-label>
+            Monthly
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list class="activities">
+    <ion-item-sliding *ngFor="let activity of activities ">
+      <ion-item>
+        <ion-card [ngClass]="activity.title.replace(' ', '-') | lowercase">
+          <ion-card-header class="card-header" >
+            <img [src]="'../assets/images/icon-'+ activity.title.replace(' ', '-').toLowerCase() + '.svg'">
+          </ion-card-header>
+          <ion-card-content>
+            <div class="title">
+              <ion-label>{{activity.title}}</ion-label>
+              <ion-img src="../assets/images/icon-ellipsis.svg"></ion-img>
+            </div>
+            <div class="time" *ngIf="time === 'daily'" >
+              <ion-label class="hours">{{activity.timeframes.daily.current}}hrs</ion-label>
+              <ion-label class="last-week"> Yesterday - {{activity.timeframes.daily.previous}}hrs</ion-label>
+            </div>
+            <div class="time" *ngIf="time === 'weekly'">
+              <ion-label class="hours">{{activity.timeframes.weekly.current}}hrs</ion-label>
+              <ion-label class="last-week"> Last Week - {{activity.timeframes.weekly.previous}}hrs</ion-label>
+            </div>
+            <div class="time" *ngIf="time === 'monthly'">
+              <ion-label class="hours">{{activity.timeframes.monthly.current}}hrs</ion-label>
+              <ion-label class="last-week"> Last Month - {{activity.timeframes.monthly.previous}}hrs</ion-label>
+            </div>
+            
+          </ion-card-content>
+          
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/joelle-jnbaptiste/solutions" target="_blank">Joëlle JB</a>.
+  </div>
+</ion-content>

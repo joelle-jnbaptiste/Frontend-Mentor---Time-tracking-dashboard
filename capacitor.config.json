@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "time-tracking-dashboard",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

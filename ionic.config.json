@@ -1,0 +1,7 @@
+{
+  "name": "time-tracking-dashboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
