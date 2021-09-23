@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/joelle-jnbaptiste/Frontend-Mentor---Time-tracking-dashboard)
+- Live Site URL: [Add live site URL here](https://joelle-jnbaptiste.github.io/Frontend-Mentor---Time-tracking-dashboard/home)
 
 ### Built with
 
